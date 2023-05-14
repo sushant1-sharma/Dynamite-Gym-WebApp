@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useRef } from "react";
 import Pagination from "@mui/material/Pagination";
 import { Box, Stack, Typography } from "@mui/material/";
 
@@ -6,8 +6,12 @@ import { exerciseOptions, fetchData } from "../utils/fetchData";
 
 import ExerciseCard from "./ExerciseCard";
 
+
+
 function Exercises({ exercises, setExercises, bodyPart, searchedbodyPart, setSearchedBodyPart }) {
- const [ currentPage, setCurrentPage ] = useState(1);
+  const myRef = useRef(null);
+ 
+  const [ currentPage, setCurrentPage ] = useState(1);
 
  const exercisesPerPage=9;
 
@@ -18,7 +22,7 @@ function Exercises({ exercises, setExercises, bodyPart, searchedbodyPart, setSea
  const paginate = (e, value)=>{
     setCurrentPage(value);
 
-    window.scrollTo({top: 1600, left: 100, behavior: 'smooth'})
+    window.scrollTo({ top: myRef.current.offsetTop, left: 0, behavior: 'smooth' });
  }
 
  useEffect(()=>{
@@ -38,7 +42,7 @@ function Exercises({ exercises, setExercises, bodyPart, searchedbodyPart, setSea
  }, [bodyPart]);
 
   return (
-    <Box id="exercises" sx={{ mt: { lg: "110px", xs: "70px"} }} mt="50px" p="20px">
+    <Box ref={myRef} id="exercises" sx={{ mt: { lg: "110px", xs: "70px"} }} mt="50px" p="20px">
       <Typography variant="h3" mb="46px">
       {searchedbodyPart ? `Showing results for ${searchedbodyPart}`: (bodyPart === 'all' ? 'All Exercises' : `Showing results for ${bodyPart}`)}
   
