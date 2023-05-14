@@ -20,7 +20,7 @@ function ExerciseVideos({ exerciseVideos, name }) {
         justifycontent="flex-start"
         flexWrap="wrap"
         alignitems="center"
-        sx={{ flexDirection: { lg: "row" }, gap: { lg: "100px", xs: "0" } }}>
+        sx={{ flexDirection: { lg: "row" }, gap: { lg: "100px", xs: "50px" } }}>
           {exerciseVideos?.slice(0,3).map((item, index)=>(
             <a
               key={index}
