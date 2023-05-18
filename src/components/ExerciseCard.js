@@ -10,8 +10,8 @@ function ExerciseCard( {exercise} ) {
     console.log(exercise.targetMuscle);
   return (
     <div>
-        <Link className="exercise-card" to={`/exercise/${exercise.id}`}>
-             <img src={exercise.gifUrl}  alt={exercise.name} Loading="lazy"/>
+        <Link className="exercise-card" to={`/exercise/${exercise.id}` }>
+             <img src={exercise.gifUrl} style={{ width: "290px", height: "230px" }} alt={exercise.name} Loading="lazy"/>
              <Stack direction="row">
                 <Button sx={{ ml: '21px', color: '#fff', background: '#ffa9a9', fontSize: '14px', borderRadius: '20px', textTransform: 'capitalize'}}>
                   {exercise.bodyPart}
@@ -20,7 +20,7 @@ function ExerciseCard( {exercise} ) {
                   {exercise.target}
                  </Button>
              </Stack>
-             <Typography ml="21px" color="#000" fontWeight="bold" mt="11px" pb="10px" textTransform="capitalize" fontSize="24px">
+             <Typography ml="21px" color="#000" fontWeight="bold" mt="11px" pb="30px" textTransform="capitalize" fontSize="18px">
                 {exercise.name}
              </Typography>
         </Link>

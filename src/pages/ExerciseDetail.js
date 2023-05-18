@@ -6,6 +6,8 @@ import Detail from "../components/Detail";
 import ExerciseVideos from "../components/ExerciseVideos";
 import SimilarExercises from "../components/SimilarExercises";
 
+import Navbar from '../components/Navbar';
+
 
 
 function ExerciseDetail() {
@@ -37,6 +39,7 @@ function ExerciseDetail() {
 
   return (
      <Box>
+      <Navbar />
       <Detail exerciseDetail={exerciseDetail}/>
       <ExerciseVideos exerciseVideos={exerciseVideos} name ={exerciseDetail.name}/>
       <SimilarExercises targetMuscleExercises={targetMuscleExercises} equipmentExercises={equipmentExercises} />

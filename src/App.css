@@ -1,7 +1,7 @@
 body {
   font-family: "Josefin Sans";
   background-image: url("./assets/images/vivid-blurred-colorful-wallpaper-background.jpg");
-  background-size: 100% 1690px;
+  background-size: 100% 1620px;
 }
 
 * {
@@ -67,8 +67,8 @@ body {
 }
 
 .exercise-card {
-  width: 400px;
-  height: 445px;
+  width: 300px;
+  height: 375px;
   background: #fff;
   border-top: 4px solid #ff2625;
   border-bottom-left-radius: 20px;

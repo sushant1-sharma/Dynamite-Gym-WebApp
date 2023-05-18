@@ -9,7 +9,7 @@ function ExerciseVideos({ exerciseVideos, name }) {
   if(!exerciseVideos.length) return <Loader />
   return (
     <Box sx={{ marginTop: { lg: "70px", xs: "40px" }, p: "20px" }}>
-      <Typography variant="h3" mb="33px">
+      <Typography variant="h4" mb="33px">
         Watch{" "}
         <span style={{ color: "#ff2625", textTransform: "capitalize" }}>
           {name}
@@ -20,7 +20,7 @@ function ExerciseVideos({ exerciseVideos, name }) {
         justifycontent="flex-start"
         flexWrap="wrap"
         alignitems="center"
-        sx={{ flexDirection: { lg: "row" }, gap: { lg: "100px", xs: "50px" } }}>
+        sx={{ flexDirection: { lg: "row" }, gap: { lg: "100px", xs: "70px" } }}>
           {exerciseVideos?.slice(0,3).map((item, index)=>(
             <a
               key={index}
@@ -30,10 +30,10 @@ function ExerciseVideos({ exerciseVideos, name }) {
               rel="noreferrer" >
                 <img src={item.video.thumbnails[0].url} alt={item.video.title} />
                 <Box>
-                  <Typography variant="h5" color="#000">
+                  <Typography variant="h6" color="#000">
                     {item.video.title}
                   </Typography>
-                  <Typography variant="h5" color="#000">
+                  <Typography variant="h6" color="#000">
                     {item.video.channelName}
                   </Typography>
                 </Box>

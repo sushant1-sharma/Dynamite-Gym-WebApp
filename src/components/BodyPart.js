@@ -11,9 +11,9 @@ const BodyPart = ({ item, setBodyPart, bodyPart, setSearchedBodyPart }) => {
       className="bodyPart-card"
       sx={{
         borderTop: bodyPart === item ? "4px solid #ff2625" : "",
-        backgroundColor: "#fff",
+        backgroundColor: "lightpurple",
         borderBottomLeftradius: "20px",
-        width: "270px",
+        width: "150px",
         height: "200px",
         cursor: "pointer",
         gap: "47px",
@@ -24,7 +24,7 @@ const BodyPart = ({ item, setBodyPart, bodyPart, setSearchedBodyPart }) => {
         window.scrollTo({top: 1600, left: 100, behavior: 'smooth'})
       }}
     >
-      <img src={Icon} alt="dumble" style={{ width: "60px", height: "60px" }} />
+      <img src={Icon} alt="dumble" style={{ width: "60px", height: "60px"}} />
       <Typography
         fontSize="24px"
         fontWeight="bold"

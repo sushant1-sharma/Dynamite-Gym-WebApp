@@ -13,7 +13,7 @@ function Exercises({ exercises, setExercises, bodyPart, searchedbodyPart }) {
  
   const [ currentPage, setCurrentPage ] = useState(1);
 
- const exercisesPerPage=9;
+ const exercisesPerPage=12;
 
  const indexOfLastExercise = currentPage*exercisesPerPage;
  const indexOfFirstExercise=indexOfLastExercise-exercisesPerPage;
@@ -49,7 +49,7 @@ function Exercises({ exercises, setExercises, bodyPart, searchedbodyPart }) {
       </Typography>
       <Stack
         direction="row"
-        sx={{ gap: { lg: "110px", xs: "50px" } }}
+        sx={{ gap: { lg: "50px", xs: "50px" } }}
         flexWrap="wrap"
         justifyContent="center"
       >
@@ -60,7 +60,7 @@ function Exercises({ exercises, setExercises, bodyPart, searchedbodyPart }) {
         ))}
       </Stack>
       <Stack mt="100px" alignItems="center">
-        {exercises.length > 9 && (
+        {exercises.length > 12 && (
           <Pagination
             color="standard"
             shape="rounded"
