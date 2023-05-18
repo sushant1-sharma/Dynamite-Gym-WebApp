@@ -19,7 +19,7 @@ function Navbar() {
           style={{ width: "48px", height: "48px", margin: "0 2px" }}
         />
       </Link>
-      <Stack direction="row" fontSize="24px" alignItems="flex-end" sx={{ gap: { sm: "50px", xs: "20px"}}}>
+      <Stack direction="row" fontSize="24px" alignItems="flex-end" sx={{ gap: { sm: "50px", xs: "10px"}}}>
         <Link
           to="/"
           style={{
@@ -30,12 +30,15 @@ function Navbar() {
         >
           Home
         </Link>
+       
+      
         <a
           href="#exercises"
           style={{ textDecoration: "none", color: "#3A1212" }}
         >
-          Exercises
+         
         </a>
+        Exercises
         <a
           href="#search"
           style={{ textDecoration: "none", color: "#3A1212" }}

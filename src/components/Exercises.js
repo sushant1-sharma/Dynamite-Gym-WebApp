@@ -8,7 +8,7 @@ import ExerciseCard from "./ExerciseCard";
 
 
 
-function Exercises({ exercises, setExercises, bodyPart, searchedbodyPart, setSearchedBodyPart }) {
+function Exercises({ exercises, setExercises, bodyPart, searchedbodyPart }) {
   const myRef = useRef(null);
  
   const [ currentPage, setCurrentPage ] = useState(1);

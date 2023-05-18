@@ -7,6 +7,7 @@ import ExerciseVideos from "../components/ExerciseVideos";
 import SimilarExercises from "../components/SimilarExercises";
 
 
+
 function ExerciseDetail() {
 
   const [exerciseDetail, setExerciseDetail] = useState({});
