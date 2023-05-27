@@ -38,8 +38,7 @@ function ExerciseDetail() {
   }, [id]);
 
   return (
-     <Box>
-      <Navbar />
+     <Box bgcolor="grey">
       <Detail exerciseDetail={exerciseDetail}/>
       <ExerciseVideos exerciseVideos={exerciseVideos} name ={exerciseDetail.name}/>
       <SimilarExercises targetMuscleExercises={targetMuscleExercises} equipmentExercises={equipmentExercises} />

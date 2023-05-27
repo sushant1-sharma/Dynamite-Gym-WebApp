@@ -31,8 +31,8 @@ function Detail({ exerciseDetail }) {
     >
       <img src={gifUrl} alt={name} Loading="lazy" className="detail-image" />
       <Stack sx={{ gap: { lg: "35px", xs: "20px" } }}>
-        <Typography variant="h3" textTransform="capitalize">{name}</Typography>
-        <Typography variant="h6">
+        <Typography variant="h3" textTransform="capitalize" color="white">{name}</Typography>
+        <Typography variant="h6" color="white">
           Exercises keep you strong. {name} {` `}
           is one of the best exercises to target your {target}. It will help you
           improve your mood and gain energy.
@@ -42,7 +42,7 @@ function Detail({ exerciseDetail }) {
               <Button sx={{ background: '#fff2db', borderRadius: '50%', width:'100px', height: '100px'}}>
                 <img src={item.icon} alt={bodyPart} style={{ width: '50px', height: '50px' }}></img>
               </Button>
-              <Typography textTransform="capitalize" variant="h5">
+              <Typography textTransform="capitalize" variant="h5" color="white">
                 {item.name}
               </Typography>
               </Stack>

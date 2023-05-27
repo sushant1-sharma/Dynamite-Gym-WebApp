@@ -9,7 +9,7 @@ function ExerciseVideos({ exerciseVideos, name }) {
   if(!exerciseVideos.length) return <Loader />
   return (
     <Box sx={{ marginTop: { lg: "70px", xs: "40px" }, p: "20px" }}>
-      <Typography variant="h4" mb="33px">
+      <Typography variant="h4" mb="33px" color="white">
         Watch{" "}
         <span style={{ color: "#ff2625", textTransform: "capitalize" }}>
           {name}
@@ -30,10 +30,10 @@ function ExerciseVideos({ exerciseVideos, name }) {
               rel="noreferrer" >
                 <img src={item.video.thumbnails[0].url} alt={item.video.title} />
                 <Box>
-                  <Typography variant="h6" color="#000">
+                  <Typography variant="h6" color="white">
                     {item.video.title}
                   </Typography>
-                  <Typography variant="h6" color="#000">
+                  <Typography variant="h6" color="white">
                     {item.video.channelName}
                   </Typography>
                 </Box>

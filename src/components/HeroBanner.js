@@ -4,44 +4,54 @@ import { Box, Stack, Typography, Button } from "@mui/material";
 
 import HeroBannerimage from "../assets/images/banner.png";
 import GYM_Image from "../assets/images/GYM_Image.jpg";
+import Search from "./Search";
 
-function HeroBanner() {
+function HeroBanner( {setBodyPart} ) {
   return (
+    <Stack>
     <Box
       sx={{
-        mt: { lg: "212px", xs: "70px" },
+        mt: { lg: "100px", xs: "100px" },
         ml: { sm: "100px" },
       }}
       position="relative"
       p="20px"
+      
     >
-      <Typography color="#FF2625" fontWeight="600" fontSize="26px">
+     
+      <Typography color="#FF2625" fontWeight="600" sx={{ fontSize: { lg: "44px", xs: "20px" } }}>
         Fitness Club
       </Typography>
       <Typography
+       color="white"
         fontWeight={700}
-        sx={{ fontSize: { lg: "44px", xs: "40px" } }}
+        sx={{ fontSize: { lg: "44px", xs: "20px" } }}
         mb="23px" mt="30px"
       >
-        Sweat, Smile <br /> and Repeat
+        Sweat, Smile and Repeat
       </Typography>
-      <Typography fontSize="22px" LineHeight="35px" mb={4}>
-        Check out the most effective Exercises
-      </Typography>
-      <Button variant="contained" color="error" href="#exercises" sx={{ backgroundColor: "#ff2625", padding: '10px'}}>
+     
+
+      <Button variant="contained" onClick = {setBodyPart("all")} color="error" href="/exercises" sx={{ backgroundColor: "Red", padding: '10px', display: { lg: "block", xs: "block" } , width: "180px", height : { lg: "45px", xs: "40px" } ,margin: "20px 0 0 0" }}>
         Explore Exercises
       </Button>
-      <Typography
+
+      
+      {/* <img src={GYM_Image} alt="banner" className="hero-banner-img" /> */}
+    </Box>
+     <Button variant="contained"  href="/bodypart-list" sx={{ backgroundColor: "LightNavy", padding: '10px', display: { lg: "block", xs: "block" } , width: "330px", height : { lg: "45px", xs: "40px" } ,margin: { lg: "20px 50px 30px 118px", xs: "2px 50px 30px 18px" }}}>
+     Click Here To Search With BodyPart
+   </Button>
+   <Typography
         fontweight={600}
         color="#ff2625"
-        mt={2}
-        sx={{ opacity: 0.1, display: { lg: "block", xs: "none" } }}
+        mt={-10}
+        sx={{ opacity: 0.2, display: { lg: "block", xs: "none" }, ml: { lg: "220px"} }}
         fontSize="200px"
       >
         Exercises
       </Typography>
-      <img src={GYM_Image} alt="banner" className="hero-banner-img" />
-    </Box>
+   </Stack>
   );
 }
 

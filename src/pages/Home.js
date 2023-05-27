@@ -2,33 +2,17 @@ import React, { useState } from "react";
 import { Route, Routes } from "react-router-dom";
 import { Box } from "@mui/material";
 import HeroBanner from "../components/HeroBanner";
-import SearchExercises from "../components/SearchExercises";
-import Exercises from "../components/Exercises";
-import Navbar from '../components/Navbar';
 
-function Home() {
-  const [exercises, setExercises] = useState([]);
-  const [bodyPart, setBodyPart] = useState("all");
-  const [searchedbodyPart, setSearchedBodyPart] = useState("");
+import Exercises from "../components/Exercises";
+import Navbar from "../components/Navbar";
+import Search from "../components/Search";
+import BodyPartList from "../components/BodyPartList";
+
+function Home({ setBodyPart }) {
 
   return (
     <Box>
-    <Navbar HomeScreen={true} />
-      <HeroBanner />
-
-      <SearchExercises
-        setExercises={setExercises}
-        bodyPart={bodyPart}
-        setBodyPart={setBodyPart}
-        setSearchedBodyPart={setSearchedBodyPart}
-      />
-      <Exercises
-        setExercises={setExercises}
-        exercises={exercises}
-        bodyPart={bodyPart}
-        searchedbodyPart={searchedbodyPart}
-        setSearchedBodyPart={setSearchedBodyPart}
-      />
+     <HeroBanner setBodyPart={setBodyPart}/>
     </Box>
   );
 }

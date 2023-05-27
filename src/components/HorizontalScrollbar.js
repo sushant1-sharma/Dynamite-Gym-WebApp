@@ -46,14 +46,14 @@ function HorizontalScrollbar({
           title={item.id || item}
           m="0 40px"
         >
-          {isBodyParts ? (
+          {isBodyParts && item!="all" ? (
             <BodyPart
               item={item}
               bodyPart={bodyPart}
               setBodyPart={setBodyPart}
               setSearchedBodyPart={setSearchedBodyPart}
             />
-          ) : (
+          ) : !isBodyParts && (
             <ExerciseCard exercise={item} />
           )}
         </Box>
