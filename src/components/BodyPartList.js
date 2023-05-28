@@ -4,6 +4,7 @@ import { Box, Button, Stack, TextField, Typography } from "@mui/material";
 import { exerciseOptions, fetchData } from "../utils/fetchData";
 
 import HorizontalScrollbar from "./HorizontalScrollbar";
+import Loader from './Loader';
 
 function BodyPartList({ setExercises, bodyPart, setBodyPart, setSearchedBodyPart }) {
   const [search, setSearch] = useState("");
@@ -55,7 +56,8 @@ function BodyPartList({ setExercises, bodyPart, setBodyPart, setSearchedBodyPart
       </Typography>
       
       <Box sx={{ position: 'relative', width: '100%', p: "20px"}}>
-        <HorizontalScrollbar data={bodyParts} bodyPart={bodyPart} setBodyPart={setBodyPart} setSearchedBodyPart={setSearchedBodyPart} isBodyParts={true}/>
+        {bodyParts.length==0 ? <Loader /> : 
+        <HorizontalScrollbar data={bodyParts} bodyPart={bodyPart} setBodyPart={setBodyPart} setSearchedBodyPart={setSearchedBodyPart} isBodyParts={true}/> }
       </Box>
      
     </Stack>

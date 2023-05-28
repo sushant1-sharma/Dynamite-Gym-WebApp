@@ -33,7 +33,7 @@ const BodyPart = ({ item, setBodyPart, bodyPart, setSearchedBodyPart }) => {
         fontSize="24px"
         fontWeight="bold"
         color="white"
-        texttransform="capitalize"
+        textTransform="capitalize"
       >
         {item}
       </Typography>

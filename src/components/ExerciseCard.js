@@ -19,6 +19,9 @@ function ExerciseCard( {exercise} ) {
                  <Button sx={{ ml: '21px', color: '#fff', background: '#fcc757', fontSize: '14px', borderRadius: '20px', textTransform: 'capitalize'}}>
                   {exercise.target}
                  </Button>
+                 <Typography sx={{ ml: '21px', mt:"21px", color: 'SkyBlue', fontSize: '14px', textTransform: 'capitalize'}}>
+                  Click To View Details
+                 </Typography>
              </Stack>
              <Typography ml="21px" color="#000" fontWeight="bold" mt="11px" pb="30px" textTransform="capitalize" fontSize="18px">
                 {exercise.name}

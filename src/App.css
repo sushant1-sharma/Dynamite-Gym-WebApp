@@ -6,6 +6,7 @@ body {
    background-repeat: repeat;
 }
 
+
  .footer{
     background-color: grey;
   }
@@ -87,6 +88,7 @@ body {
   transition: 0.3s all ease-in-out;
 }
 
+
 .exercise-card img {
   height: 326px;
 }
@@ -119,6 +121,8 @@ body {
   height: 50px;
   width: 50px;
 }
+
+
 
 @media screen and (max-width: 1200px) {
   .detail-image {
@@ -173,7 +177,7 @@ body {
     font-family: "Josefin Sans";
     /* background-image: url("./assets/images/vivid-blurred-colorful-wallpaper-background.jpg"); */
     background-image: url("./assets/images/GYM_Image.jpg");
-     background-size: 100% 680px ;
+     background-size: 100% 689px ;
      background-repeat: no-repeat;
      background-color: rgb(71, 62, 62);
   }

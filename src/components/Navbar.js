@@ -40,8 +40,9 @@ function Navbar({ HomeScreen, setBodyPart }) {
         alignItems="flex-end"
         sx={{ gap: { sm: "50px", xs: "40px" } }}
       >
-        <Link
-          to="/"
+        <a
+          href="/"
+          onClick={handleClick}
           style={{
             textDecoration: "none",
             color: "white",
@@ -49,7 +50,7 @@ function Navbar({ HomeScreen, setBodyPart }) {
           }}
         >
           Home
-        </Link>
+        </a>
 
         <a
           onClick={handleClick}

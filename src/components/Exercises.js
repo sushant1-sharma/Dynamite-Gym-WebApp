@@ -6,10 +6,14 @@ import { exerciseOptions, fetchData } from "../utils/fetchData";
 
 import ExerciseCard from "./ExerciseCard";
 
-import Loader from './Loader';
+import Loader from "./Loader";
 
-
-export default function Exercises({ exercises, setExercises, bodyPart, searchedbodyPart }) {
+export default function Exercises({
+  exercises,
+  setExercises,
+  bodyPart,
+  searchedbodyPart,
+}) {
   const myRef = useRef(null);
 
   const [currentPage, setCurrentPage] = useState(1);
@@ -59,7 +63,7 @@ export default function Exercises({ exercises, setExercises, bodyPart, searchedb
       setExercises(exercisesData);
     };
     fetchExercisesData();
-    console.log("I am Exercise Component Search Body" , exercises);
+    console.log("I am Exercise Component Search Body", exercises);
   }, [bodyPart]);
 
   useEffect(() => {
@@ -72,65 +76,71 @@ export default function Exercises({ exercises, setExercises, bodyPart, searchedb
     };
   }, [showLoader]);
 
-
   console.log("ShowLoader is", showLoader);
   return (
     <>
-      {showLoader? (
+      {showLoader ? (
         <Loader />
       ) : (
-        <Box
-          ref={myRef}
-          id="exercises"
-          sx={{ mt: { lg: "30px", xs: "70px" } }}
-          mt="50px"
-          p="20px"
-          bgcolor="grey"
-        >
-          <Typography variant="h3" mb="46px" color="white">
-            {searchedbodyPart && exercises.length > 0
-              ? `Showing results for ${searchedbodyPart}`
-              : bodyPart === "all"
-              ? "All Exercises"
-              : searchedbodyPart && exercises.length === 0
-              ? "No Results Found"
-              : `Showing results for ${bodyPart}`}
-          </Typography>
-          <Stack
-            direction="row"
-            sx={{ gap: { lg: "50px", xs: "50px" } }}
-            flexWrap="wrap"
-            justifyContent="center"
-          >
-            {currentExercises.map((exercise, index) => (
-              <p key={index}>
-                <ExerciseCard exercise={exercise} />
-              </p>
-            ))}
-          </Stack>
-          <Stack
-            mt="100px"
-            position="relative"
-            alignItems="center"
-            bgcolor="grey"
-            width="100%" // Set the width to 100% to fill the available space
-            justifyContent="center" // Center the items horizontally
-          >
-            {exercises.length > 12 && (
-              <Pagination
-                color="secondary"
-                size="large"
-                shape="rounded"
-                defaultPage={1}
-                count={Math.ceil(exercises.length / exercisesPerPage)}
-                page={currentPage}
-                onChange={paginate}
-              />
-            )}
-          </Stack>
+        <Box>
+          {exercises.length === 0 ? (
+            <Typography variant="h3" mb="46px" mt="40px" color="white">
+              No Results Found!
+            </Typography>
+          ) : (
+            <Box
+              ref={myRef}
+              id="exercises"
+              sx={{ mt: { lg: "30px", xs: "70px" } }}
+              mt="50px"
+              p="20px"
+              bgcolor="grey"
+            >
+              <Typography variant="h3" sx = {{ fontSize: {xs: "20px"} }} mb="46px" mt="40px" color="white">
+                {searchedbodyPart && exercises.length > 0
+                  ? `Showing results for ${searchedbodyPart}`
+                  : bodyPart === "all"
+                  ? "All Exercises"
+                  : searchedbodyPart && exercises.length === 0
+                  ? "No Results Found"
+                  : `Showing results for ${bodyPart}`}
+              </Typography>
+              <Stack
+                direction="row"
+                sx={{ gap: { lg: "50px", xs: "50px" } }}
+                flexWrap="wrap"
+                justifyContent="center"
+              >
+                {currentExercises.map((exercise, index) => (
+                  <p key={index}>
+                    <ExerciseCard exercise={exercise} />
+                  </p>
+                ))}
+              </Stack>
+              <Stack
+                mt="100px"
+                position="relative"
+                alignItems="center"
+                bgcolor="grey"
+                width="100%" // Set the width to 100% to fill the available space
+                justifyContent="center" // Center the items horizontally
+              >
+                {exercises.length > 12 && (
+                  <Pagination
+                    color="secondary"
+                    size="large"
+                    shape="rounded"
+                    defaultPage={1}
+                    count={Math.ceil(exercises.length / exercisesPerPage)}
+                    page={currentPage}
+                    onChange={paginate}
+                  />
+                )}
+              </Stack>
+            </Box>
+          )}
         </Box>
       )}
     </>
   );
-            }
-
+}

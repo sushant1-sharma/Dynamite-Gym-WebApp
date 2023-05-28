@@ -6,7 +6,7 @@ import Logo from "../assets/images/Logo.png";
 function Footer() {
   return (
     <Box
-      mt="180px"
+      mt="200px"
       position="relative"
       mb="0px"
       className="footer"

@@ -3,29 +3,36 @@ import { Box, Button, Stack, TextField, Typography } from "@mui/material";
 
 import { exerciseOptions, fetchData } from "../utils/fetchData";
 
-import { useNavigate } from 'react-router-dom';
+import { useNavigate } from "react-router-dom";
 
-
-
-function Search( { setExercises, bodyPart, setBodyPart, setSearchedBodyPart, searchedbodyPart } ) {
+function Search({
+  setExercises,
+  bodyPart,
+  setBodyPart,
+  setSearchedBodyPart,
+  searchedbodyPart,
+}) {
   const navigate = useNavigate();
 
-  var   [bodyParts, setBodyParts] = useState([]);
+  var [bodyParts, setBodyParts] = useState([]);
 
   const [search, setSearch] = useState("");
 
   const handleSearch = () => {
-    
-      setSearchedBodyPart(search);
-      setBodyPart(search);
-      // console.log("Searched data is" , searchedExercises);
-      // setExercises(searchedExercises);
-      // window.scrollTo({top: 1600, left: 100, behavior: 'smooth'})
-      navigate('/exercises');
-      // setSearch(search)
-      setSearch('');
-    }
+    setSearchedBodyPart(search);
+    setBodyPart(search.toLowerCase());
+    navigate("/exercises");
+    setSearch("");
+  };
 
+  const handleKeyDown = (event) => {
+    if (event.key === "Enter" && search!="" ) {
+      setSearchedBodyPart(search);
+      setBodyPart(search.toLowerCase());
+      navigate("/exercises");
+      setSearch("");
+    }
+  };
   return (
     <Stack alignItems="center" mt="-20px" justifyContent="center" p="20px">
       <Box position="relative" mb="72px">
@@ -45,7 +52,8 @@ function Search( { setExercises, bodyPart, setBodyPart, setSearchedBodyPart, sea
             borderRadius: "10px",
           }}
           value={search}
-          onChange={(e) => setSearch(e.target.value.toLowerCase())}
+          onChange={(e) => setSearch(e.target.value)}
+          onKeyDown={handleKeyDown}
           placeholder="Search Exercises"
           type="text"
         />
@@ -61,7 +69,6 @@ function Search( { setExercises, bodyPart, setBodyPart, setSearchedBodyPart, sea
             position: "absolute",
             right: "0px",
             fontSize: { lg: "20px", xs: "14px" },
-            
           }}
           onClick={handleSearch}
         >
